@@ -6,7 +6,7 @@ exports.registerUser = async (req, res) => {
   try {
     const { name, phoneNumber, age, pincode, aadharNo, password } = req.body;
 
-    // Validate input data (example)
+    // Validate input data 
     if (!isValidPhoneNumber(phoneNumber) || !isValidAge(age)) {
       return res.status(400).json({ success: false, message: 'Invalid input data' });
     }
@@ -48,6 +48,9 @@ function isValidAge(age) {
   // Add your age validation logic
   return true;
 }
+
+
+
 exports.userLogin = async (req, res) => {
   try {
     const { phoneNumber, password } = req.body;
@@ -65,7 +68,7 @@ exports.userLogin = async (req, res) => {
 
     // Check if the password is valid
     if (!isPasswordValid) {
-      return res.status(401).json({ success: false, message: 'Invalid password' });
+      return res.status(401).json({ success: false, message: 'Invalid phone number or password' });
     }
 
     // At this point, the login is successful
@@ -75,3 +78,4 @@ exports.userLogin = async (req, res) => {
     res.status(500).json({ success: false, message: 'Internal Server Error' });
   }
 };
+

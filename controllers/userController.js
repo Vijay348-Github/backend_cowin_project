@@ -33,7 +33,6 @@ exports.registerForSlot = async (req, res) => {
     const { userId, slotId } = req.body;
 
     // Logic to register user for a vaccine slot
-    // ...
     // Find user and slot
     const user = await User.findById(userId);
     const slot = await Slot.findById(slotId);
@@ -69,7 +68,6 @@ exports.updateRegisteredSlot = async (req, res) => {
     const { newSlotId } = req.body;
 
     // Logic to update the registered slot for a user
-    // ...
 
     // Find user and new slot
     const user = await User.findById(userId);

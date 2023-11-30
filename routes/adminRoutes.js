@@ -15,4 +15,7 @@ router.get('/total-slots', adminController.getTotalSlots);
 // Get slot details route
 router.get('/slot/:slotId', adminController.getSlotDetails);
 
+// Adding a slot
+router.post('/add-slot', adminController.addSlot);
+
 module.exports = router;

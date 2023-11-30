@@ -1,6 +1,7 @@
 // app.js
 const express = require('express');
 const mongoose = require('mongoose');
+const process = require('dotenv').config();
 
 const userRoutes = require('./routes/userRoutes')
 
@@ -9,7 +10,7 @@ const adminRoutes = require('./routes/adminRoutes');
 const app = express();
 
 // Connect to MongoDB Atlas
-mongoose.connect('mongodb+srv://vijayramesh4321:wBgyCG0SkAVcq8fK@assignment.3zz4xbk.mongodb.net/project', {
+mongoose.connect(process.env.MONGODB_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
